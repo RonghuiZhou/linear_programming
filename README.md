@@ -2,8 +2,9 @@
 
 Solving maximization problem:
 
-1. LinearProgramming_SimplexMaxSolver.py
-2. LinearProgramming_SimplexMaxSolver_v2.py
+1. Maximization problem: LinearProgramming_SimplexMaxSolver.py
+2. Maximization problem: LinearProgramming_SimplexMaxSolver_v2.py
+3. Minimization problem: LinearProgramming_SimplexMinSolver.py
 
 
 [YouTube Example for Maximization](https://www.youtube.com/watch?v=rzRZLGD_aeE)
