@@ -1,7 +1,9 @@
 # linear_programming
 
 Solving maximization problem:
-LinearProgramming_SimplexMaxSolver.py
+
+1. LinearProgramming_SimplexMaxSolver.py
+2. LinearProgramming_SimplexMaxSolver_v2.py
 
 
 [YouTube Example for Maximization](https://www.youtube.com/watch?v=rzRZLGD_aeE)
