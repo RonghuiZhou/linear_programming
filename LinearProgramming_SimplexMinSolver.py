@@ -25,6 +25,36 @@ import numpy as np
 # set precision
 np.set_printoptions(precision=1, suppress=True)
 
+################################################################################################################
+################################################################################################################
+def solveMinLP(M, lowBound=0):
+    nrows = M.shape[0]
+    num_vars = M.shape[1] - 1
+
+    varNames = ['x' + str(i) for i in range(num_vars)]
+
+    Xs = [lp.LpVariable(var, lowBound=lowBound) for var in varNames]
+
+    # create a maximization problem
+    prob = lp.LpProblem('minimization', lp.LpMinimize)
+
+    # objective function
+    prob += np.sum(M[-1, :-1] * Xs)
+
+    # add constraints
+    for i in range(nrows - 1):
+        prob += np.sum(M[i, :-1] * Xs) >= M[i, -1]
+
+    # solve
+    status = prob.solve()
+
+    for variable in prob.variables():
+        print(variable.name, '=', variable.value())
+
+    print(f'\nMaximum profit: {prob.objective.value()}.')
+################################################################################################################
+################################################################################################################
+
 M = np.array([[2, 1, 3, 6],
               [1, 2, 4, 8],
               [3, 1, -2, 4],
@@ -79,7 +109,13 @@ for variable in prob.variables():
 
 print(f'\nMaximum profit: {prob.objective.value()}.')
 
+### method 2 for example 1
+M = np.array([[2, 1, 3, 6],
+              [1, 2, 4, 8],
+              [3, 1, -2, 4],
+              [1, 1, 3, 0]])
 
+solveMinLP(M)
 
 ################################################################################################################
 ################################################################################################################
