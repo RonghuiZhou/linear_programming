@@ -11,3 +11,11 @@ Solving maximization/minimization problem:
 
 
 [YouTube Example for Minimization](https://www.youtube.com/watch?v=nH-MkrTqqew)
+
+
+
+how to install cvxpy package:
+
+conda install -c conda-forge lapack
+conda install -c cvxgrp cvxpy
+conda install -c conda-forge cvxopt
