@@ -1,6 +1,6 @@
 # linear_programming
 
-Solving maximization problem:
+Solving maximization/minimization problem:
 
 1. Maximization problem: LinearProgramming_SimplexMaxSolver_v3.py
 2. Minimization problem: LinearProgramming_SimplexMinSolver.py
