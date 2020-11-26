@@ -35,7 +35,7 @@ def solveMinLP(M, lowBound=0):
 
     Xs = [lp.LpVariable(var, lowBound=lowBound) for var in varNames]
 
-    # create a maximization problem
+    # create a minimization problem
     prob = lp.LpProblem('minimization', lp.LpMinimize)
 
     # objective function
@@ -87,7 +87,7 @@ x1 = lp.LpVariable('x1', lowBound=0)
 x2 = lp.LpVariable('x2', lowBound=0)
 x3 = lp.LpVariable('x3', lowBound=0)
 
-# create a maximization problem
+# create a minimization problem
 prob = lp.LpProblem('minimization', lp.LpMinimize)
 
 # objective function
@@ -107,7 +107,7 @@ status = prob.solve()
 for variable in prob.variables():
     print(variable.name, '=', variable.value())
 
-print(f'\nMaximum profit: {prob.objective.value()}.')
+print(f'\nMinimum: {prob.objective.value()}.')
 
 ### method 2 for example 1
 M = np.array([[2, 1, 3, 6],

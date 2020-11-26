@@ -27,7 +27,7 @@ def solveMinLP(M, lowBound=0):
 
     Xs = [lp.LpVariable(var, lowBound=lowBound) for var in varNames]
 
-    # create a maximization problem
+    # create a minimization problem
     prob = lp.LpProblem('minimization', lp.LpMinimize)
 
     # objective function
@@ -64,7 +64,7 @@ def solveMaxLP(M, lowBound=0):
     Xs = [lp.LpVariable(var, lowBound=lowBound) for var in varNames]
 
     # create a maximization problem
-    prob = lp.LpProblem('minimization', lp.LpMaximize)
+    prob = lp.LpProblem('maximization', lp.LpMaximize)
 
     # objective function
     prob += np.sum(M[-1, :-1] * Xs)
